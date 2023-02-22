@@ -1,44 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <header class="container flex">
+      <nav class="nav flex">
+        <img class="menu-toggle" src="./images/icon-menu.svg" />
+        <a href="#"><img src="./images/logo.svg" alt="sneakers" /></a>
+        <div class="overlay"></div>
+        <ul class="nav-list flex">
+          <svg
+            class="menu-close"
+            width="14"
+            height="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+              fill="#69707D"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <li class="nav-item"><a href="#">Collections</a></li>
+          <li class="nav-item"><a href="#">Men</a></li>
+          <li class="nav-item"><a href="#">Women</a></li>
+          <li class="nav-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="user-panel flex">
+        <div class="nav-cart">
+          <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+              fill="currentColor"
+              fill-rule="nonzero"
+            />
+          </svg>
+          <span class="nav-cart-count"></span>
+        </div>
+        <img
+          class="avater"
+          src="images/image-avatar.png"
+          alt="profile picture"
+        />
+      </div>
+      <div class="cart">
+        <h2>Cart</h2>
+        <div class="cart__content">
+          <p>Your cart is empty.</p>
+        </div>
+      </div>
+    </header>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
+    <main class="product flex">
+      <section class="product__img-div">
+        <svg
+          class="image-prev"
+          width="12"
+          height="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 11 1 L 3 9l11 8"
+            stroke="currentColor"
+            stroke-width="3"
+            fill="none"
+            fill-rule="evenodd"
+          />
+        </svg>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <img
+          class="product__img img-current"
+          src="./images/image-product-1.jpg"
+          alt="sneakers"
+        />
+        <img
+          class="product__img"
+          src="./images/image-product-2.jpg"
+          alt="sneakers"
+        />
+        <img
+          class="product__img"
+          src="./images/image-product-3.jpg"
+          alt="sneakers"
+        />
+        <img
+          class="product__img"
+          src="./images/image-product-4.jpg"
+          alt="sneakers"
+        />
+        <svg
+          class="image-next"
+          width="13"
+          height="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m3 1 8 8-9 8"
+            stroke="currentColor"
+            stroke-width="3"
+            fill="none"
+            fill-rule="evenodd"
+          />
+        </svg>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+        <div class="product__thumbnail-div">
+          <div class="product__thumbnail thumbnail-current" data-seq="1">
+            <img src="./images/image-product-1-thumbnail.jpg" />
+          </div>
+          <div class="product__thumbnail" data-seq="2">
+            <img src="./images/image-product-2-thumbnail.jpg" />
+          </div>
+          <div class="product__thumbnail" data-seq="3">
+            <img src="./images/image-product-3-thumbnail.jpg" />
+          </div>
+          <div class="product__thumbnail" data-seq="4">
+            <img src="./images/image-product-4-thumbnail.jpg" />
+          </div>
+        </div>
+      </section>
+      <section class="product__content container">
+        <p class="product__brand">Sneaker Company</p>
 
-  Sneaker Company
+        <h1 class="product__title">Fall Limited Edition Sneakers</h1>
 
-  Fall Limited Edition Sneakers
+        <p class="product__desc">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+        <div class="price-info flex">
+          <div class="price-info-current flex">
+            <p class="price-current">$125.00</p>
+            <p class="price-discount">50%</p>
+          </div>
+          <p class="price-strikethrough">$250.00</p>
+        </div>
+        <div class="product__to-cart flex">
+          <div class="product__count flex">
+            <img
+              class="count-minus"
+              src="./images/icon-minus.svg"
+              alt="minus"
+            />
+            <p class="product-amount">0</p>
+            <img class="count-plus" src="./images/icon-plus.svg" alt="plus" />
+          </div>
+          <button class="btn flex add-to-cart">
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              />
+            </svg>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section class="modal">
+        <div class="modal__content">
+          <svg
+            class="modal-close"
+            width="14"
+            height="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <div class="modal__img-div product__img-div">
+            <svg
+              class="modal__img-prev image-prev"
+              width="12"
+              height="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 11 1 L 3 9l11 8"
+                stroke="currentColor"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <img
+              class="product__img img-current"
+              src="./images/image-product-1.jpg"
+              alt="sneakers"
+            />
+            <img
+              class="product__img"
+              src="./images/image-product-2.jpg"
+              alt="sneakers"
+            />
+            <img
+              class="product__img"
+              src="./images/image-product-3.jpg"
+              alt="sneakers"
+            />
+            <img
+              class="product__img"
+              src="./images/image-product-4.jpg"
+              alt="sneakers"
+            />
+            <svg
+              class="modal__img-next image-next"
+              width="13"
+              height="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m3 1 8 8-9 8"
+                stroke="currentColor"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
 
-  $125.00
-  50%
-  $250.00
+          <div class="modal__thumbnail-div product__thumbnail-div">
+            <div class="product__thumbnail thumbnail-current" data-seq="1">
+              <img src="./images/image-product-1-thumbnail.jpg" />
+            </div>
+            <div class="product__thumbnail" data-seq="2">
+              <img src="./images/image-product-2-thumbnail.jpg" />
+            </div>
+            <div class="product__thumbnail" data-seq="3">
+              <img src="./images/image-product-3-thumbnail.jpg" />
+            </div>
+            <div class="product__thumbnail" data-seq="4">
+              <img src="./images/image-product-4-thumbnail.jpg" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer class="attribution container">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/ritatanght">Rita Tang</a>.
+    </footer>
+  </body>
 </html>
