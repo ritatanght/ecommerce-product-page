@@ -1,5 +1,5 @@
 // toggle menu open and close
-const menu = document.querySelector(".nav-list");
+const menu = document.querySelector(".nav");
 const menuToggle = document.querySelector(".menu-toggle");
 const menuClose = document.querySelector(".menu-close");
 const overlay = document.querySelector(".overlay");
@@ -124,7 +124,7 @@ function showModal() {
 
   const modalLgImages = modal.querySelectorAll(".product__img");
   const modalSmImages = modal.querySelectorAll(".product__thumbnail");
-  
+
   modal.querySelector(".img-current").classList.remove("img-current");
   modal
     .querySelector(".thumbnail-current")
