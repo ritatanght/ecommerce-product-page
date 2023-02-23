@@ -328,7 +328,6 @@ header {
   margin: 1.5em 0;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5em;
-  align-self: flex-start;
   padding: 0 2px;
 }
 
@@ -524,7 +523,7 @@ header {
 
 .modal {
   position: fixed;
-  inset: 0 0 0 0;
+  inset: 0;
   background: hsl(var(--clr-black), 0.7);
   z-index: 6;
   display: grid;
@@ -544,7 +543,10 @@ header {
 }
 .modal__content .product__img {
   cursor: auto;
+  max-height: 60vh;
+  min-height: 350px;
 }
+
 .modal__img-div {
   position: relative;
   display: grid;
@@ -553,6 +555,7 @@ header {
 .modal__img-div > .product__img {
   transition: 0s;
 }
+
 
 .modal-close {
   cursor: pointer;
@@ -567,6 +570,7 @@ header {
 
 .modal__thumbnail-div {
   width: 80%;
+  max-width: 400px;
   margin-inline: auto;
   display: grid;
   position: relative;
@@ -578,11 +582,13 @@ header {
   place-self: center;
 }
 .modal__img-prev {
-  left: -1.3em;
+  left:-1.3rem;
+  /* left: calc(3rem - 5vw) */
 }
 
 .modal__img-next {
-  right: -1.3em;
+  right:-1.3rem;
+  /* right: calc(3rem - 5vw) */
 }
 
 /* for all hidden and show elements */
